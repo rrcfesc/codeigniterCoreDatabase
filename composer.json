@@ -1,0 +1,31 @@
+{
+  "name": "CodeIgniterCoreDatabaseMysql",
+  "description": "CodeIgniter Core Database Mysql" ,
+  "license": "BSD 3-Clause License",
+  "keywords": ["CodeIgniter", "MYSQL","Database"],
+  "authors": [
+    {
+      "name": "Ricardo Ruiz",
+      "email": "ricardojesus.ruizcruz@gmail.com"
+    }
+  ],
+  "require":{
+    "php"                       : ">=7.0.15"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.*",
+    "php-coveralls/php-coveralls": "dev-master",
+    "phpunit/phpcov": "^2.0",
+    "squizlabs/php_codesniffer": "1.5.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Rioxygen\\CiCoreDatabase\\": "src"
+    }
+  },
+  "autoload-dev" : {
+    "psr-4" : {
+      "Rioxygen\\CiCoreDatabase\\" : "tests/"
+    }
+  }
+}
