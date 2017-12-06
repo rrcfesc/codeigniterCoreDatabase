@@ -3,6 +3,8 @@
   "description": "CodeIgniter Core Database Mysql" ,
   "license": "BSD 3-Clause License",
   "keywords": ["CodeIgniter", "MYSQL","Database"],
+  "version": "0.0.2",
+  "minimum-stability": "stable",
   "authors": [
     {
       "name": "Ricardo Ruiz",
