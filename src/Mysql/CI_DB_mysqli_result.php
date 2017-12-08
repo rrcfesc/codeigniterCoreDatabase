@@ -38,6 +38,7 @@
 namespace Rioxygen\CiCoreDatabase\Mysql;
 
 use Rioxygen\CiCoreDatabase\CI_DB_result;
+use \stdClass;
 
 /**
  * MySQLi Result Class

@@ -38,6 +38,7 @@
 namespace Rioxygen\CiCoreDatabase\Mysql;
 
 use Rioxygen\CiCoreDatabase\CI_DB_driver;
+use \stdClass;
 
 /**
  * MySQLi Database Adapter Class
@@ -304,40 +305,33 @@ class CI_DB_mysqli_driver extends CI_DB_driver {
 
 	// --------------------------------------------------------------------
 
-	/**
-	 * Prep the query
-	 *
-	 * If needed, each database adapter can prep the query string
-	 *
-	 * @param	string	$sql	an SQL query
-	 * @return	string
-	 */
-	protected function _prep_query($sql)
-	{
-		// mysqli_affected_rows() returns 0 for "DELETE FROM TABLE" queries. This hack
-		// modifies the query so that it a proper number of affected rows is returned.
-		if ($this->delete_hack === TRUE && preg_match('/^\s*DELETE\s+FROM\s+(\S+)\s*$/i', $sql))
-		{
-			return trim($sql).' WHERE 1=1';
-		}
-
-		return $sql;
-	}
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Begin Transaction
-	 *
-	 * @return	bool
-	 */
-	protected function _trans_begin()
-	{
-		$this->conn_id->autocommit(FALSE);
-		return is_php('5.5')
-			? $this->conn_id->begin_transaction()
-			: $this->simple_query('START TRANSACTION'); // can also be BEGIN or BEGIN WORK
-	}
+    /**
+     * Prep the query
+     *
+     * If needed, each database adapter can prep the query string
+     *
+     * @param   string $sql an SQL query
+     * @return  string
+     */
+    protected function _prep_query($sql)
+    {
+        // mysqli_affected_rows() returns 0 for "DELETE FROM TABLE" queries. This hack
+        // modifies the query so that it a proper number of affected rows is returned.
+        if ($this->delete_hack === TRUE && preg_match('/^\s*DELETE\s+FROM\s+(\S+)\s*$/i', $sql)) {
+                return trim($sql).' WHERE 1=1';
+        }
+        return $sql;
+    }
+    /**
+     * Begin Transaction
+     *
+     * @return bool
+     */
+    protected function _trans_begin()
+    {
+        $this->conn_id->autocommit(FALSE);
+        return  $this->simple_query('START TRANSACTION'); // can also be BEGIN or BEGIN WORK
+    }
 
 	// --------------------------------------------------------------------
 
