@@ -20,7 +20,6 @@ class CI_DB_driverTest extends \PHPUnit_Framework_TestCase
     {
         $cofig = \Bootstrap::getConfig();
         $baseDatos = new CI_DB_mysqli_driver($cofig);
-        $baseDatos->
         $this->assertTrue(true);
     }
 }
