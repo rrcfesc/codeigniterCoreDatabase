@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/rrcfesc/codeigniterCoreDatabase.svg?branch=master)](https://travis-ci.org/rrcfesc/codeigniterCoreDatabase)
-
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rrcfesc/codeigniterCoreDatabase/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rrcfesc/codeigniterCoreDatabase/?branch=master)
 [![Dependency Status](https://www.versioneye.com/user/projects/5a2b16b70fb24f466ccb947e/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/5a2b16b70fb24f466ccb947e)
 

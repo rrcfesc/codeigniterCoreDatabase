@@ -87,7 +87,6 @@ abstract class CI_DB_utility {
 	public function __construct(&$db)
 	{
 		$this->db =& $db;
-		log_message('info', 'Database Utility Class Initialized');
 	}
 
 	// --------------------------------------------------------------------
@@ -226,44 +225,36 @@ abstract class CI_DB_utility {
 
 	// --------------------------------------------------------------------
 
-	/**
-	 * Generate CSV from a query result object
-	 *
-	 * @param	object	$query		Query result object
-	 * @param	string	$delim		Delimiter (default: ,)
-	 * @param	string	$newline	Newline character (default: \n)
-	 * @param	string	$enclosure	Enclosure (default: ")
-	 * @return	string
-	 */
-	public function csv_from_result($query, $delim = ',', $newline = "\n", $enclosure = '"')
-	{
-		if ( ! is_object($query) OR ! method_exists($query, 'list_fields'))
-		{
-			show_error('You must submit a valid result object');
-		}
-
-		$out = '';
-		// First generate the headings from the table column names
-		foreach ($query->list_fields() as $name)
-		{
-			$out .= $enclosure.str_replace($enclosure, $enclosure.$enclosure, $name).$enclosure.$delim;
-		}
-
-		$out = substr($out, 0, -strlen($delim)).$newline;
-
-		// Next blast through the result array and build out the rows
-		while ($row = $query->unbuffered_row('array'))
-		{
-			$line = array();
-			foreach ($row as $item)
-			{
-				$line[] = $enclosure.str_replace($enclosure, $enclosure.$enclosure, $item).$enclosure;
-			}
-			$out .= implode($delim, $line).$newline;
-		}
-
-		return $out;
-	}
+    /**
+     * Generate CSV from a query result object
+     *
+     * @param	object	$query		Query result object
+     * @param	string	$delim		Delimiter (default: ,)
+     * @param	string	$newline	Newline character (default: \n)
+     * @param	string	$enclosure	Enclosure (default: ")
+     * @return	string
+     */
+    public function csv_from_result($query, $delim = ',', $newline = "\n", $enclosure = '"')
+    {
+        if ( ! is_object($query) OR ! method_exists($query, 'list_fields')) {
+            error_log('You must submit a valid result object');
+        }
+        $out = '';
+        // First generate the headings from the table column names
+        foreach ($query->list_fields() as $name) {
+                $out .= $enclosure.str_replace($enclosure, $enclosure.$enclosure, $name).$enclosure.$delim;
+        }
+        $out = substr($out, 0, -strlen($delim)).$newline;
+        // Next blast through the result array and build out the rows
+        while ($row = $query->unbuffered_row('array')) {
+            $line = array();
+            foreach ($row as $ite) {
+                $line[] = $enclosure.str_replace($enclosure, $enclosure.$enclosure, $item).$enclosure;
+            }
+            $out .= implode($delim, $line).$newline;
+        }
+        return $out;
+    }
 
 	// --------------------------------------------------------------------
 
@@ -278,7 +269,7 @@ abstract class CI_DB_utility {
 	{
 		if ( ! is_object($query) OR ! method_exists($query, 'list_fields'))
 		{
-			show_error('You must submit a valid result object');
+			error_log('You must submit a valid result object');
 		}
 
 		// Set our default values

@@ -1,14 +1,21 @@
 <?php
+/**
+ * Rioxygen
+ * @copyright Copyright (c) 2018 Rioxygen. (http://www.Rioxygen.com/)
+ * @license  BSD 3-clause "New" or "Revised" License 
+ */
 
 /**
- * 
+ * Clase para el cargado de clases
+ * @package \
+ * @author Ricardo Ruiz <ricardojesus.ruizcruz@gmail.com>
  */
 class Bootstrap
 {
     /**
-     * 
+     * <p>Comando para levantar el autoloader</p>
      */
-    static function go()
+    static public function go()
     {
         // Make everything relative to the root
         chdir(dirname(__DIR__));

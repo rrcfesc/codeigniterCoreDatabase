@@ -53,74 +53,67 @@ use Rioxygen\CiCoreDatabase\CI_DB_driver;
  * @link		https://codeigniter.com/user_guide/database/
  */
 class CI_DB_mysqli_driver extends CI_DB_driver {
-
-	/**
-	 * Database driver
-	 *
-	 * @var	string
-	 */
-	public $dbdriver = 'mysqli';
-
-	/**
-	 * Compression flag
-	 *
-	 * @var	bool
-	 */
-	public $compress = FALSE;
-
-	/**
-	 * DELETE hack flag
-	 *
-	 * Whether to use the MySQL "delete hack" which allows the number
-	 * of affected rows to be shown. Uses a preg_replace when enabled,
-	 * adding a bit more processing to all queries.
-	 *
-	 * @var	bool
-	 */
-	public $delete_hack = TRUE;
-
-	/**
-	 * Strict ON flag
-	 *
-	 * Whether we're running in strict SQL mode.
-	 *
-	 * @var	bool
-	 */
-	public $stricton;
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * Identifier escape character
-	 *
-	 * @var	string
-	 */
-	protected $_escape_char = '`';
-
-	// --------------------------------------------------------------------
-
-	/**
-	 * MySQLi object
-	 *
-	 * Has to be preserved without being assigned to $conn_id.
-	 *
-	 * @var	MySQLi
-	 */
-	protected $_mysqli;
-
-	// --------------------------------------------------------------------
-    public function __construct(array $params) {
+    /**
+     * Database driver
+     *
+     * @var string
+     */
+    public $dbdriver = 'mysqli';
+    /**
+     * Compression flag
+     *
+     * @var bool
+     */
+    public $compress = FALSE;
+    /**
+     * DELETE hack flag
+     *
+     * Whether to use the MySQL "delete hack" which allows the number
+     * of affected rows to be shown. Uses a preg_replace when enabled,
+     * adding a bit more processing to all queries.
+     *
+     * @var bool
+     */
+    public $delete_hack = TRUE;
+    /**
+     * Strict ON flag
+     *
+     * Whether we're running in strict SQL mode.
+     *
+     * @var bool
+     */
+    public $stricton;
+    /**
+     * Identifier escape character
+     *
+     * @var string
+     */
+    protected $_escape_char = '`';
+    /**
+     * MySQLi object
+     *
+     * Has to be preserved without being assigned to $conn_id.
+     *
+     * @var MySQLi
+     */
+    protected $_mysqli;
+    /**
+     * 
+     * @param array $params
+     */
+    public function __construct(array $params)
+    {
         parent::__construct($params);
     }
 
     /**
-	 * Database connection
-	 *
-	 * @param	bool	$persistent
-	 * @return	object
-	 */
-	public function db_connect($persistent = FALSE)
-	{
+     * Database connection
+     *
+     * @param	bool	$persistent
+     * @return	object
+     **/
+    public function db_connect($persistent = FALSE)
+    {
 		// Do we have a socket path?
 		if ($this->hostname[0] === '/')
 		{
@@ -221,7 +214,7 @@ class CI_DB_mysqli_driver extends CI_DB_driver {
 		}
 
 		return FALSE;
-	}
+    }
 
 	// --------------------------------------------------------------------
 
