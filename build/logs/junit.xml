@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites>
-  <testsuite name="CodeIgniter" tests="1" assertions="1" failures="0" errors="0" time="0.004856">
-    <testsuite name="Rioxygen\CiCoreDatabase\CI_DB_driverTest" file="/var/www/html/tests/CI_DB_driverTest.php" tests="1" assertions="1" failures="0" errors="0" time="0.004856">
-      <testcase name="testMysqlDriver" class="Rioxygen\CiCoreDatabase\CI_DB_driverTest" file="/var/www/html/tests/CI_DB_driverTest.php" line="16" assertions="1" time="0.004856"/>
-    </testsuite>
-  </testsuite>
-</testsuites>
