@@ -39,8 +39,8 @@
 namespace Rioxygen\CiCoreDatabase;
 
 use Rioxygen\CiCoreDatabase\CI_DB_result;
-use Rioxygen\CiCoreDatabase\CI_DB_forge;
-use Rioxygen\CiCoreDatabase\Mysql\CI_DB_mysqli_result;
+#use Rioxygen\CiCoreDatabase\CI_DB_forge;
+#use Rioxygen\CiCoreDatabase\Mysql\CI_DB_mysqli_result;
 /**
  * Database Driver Class
  *
