@@ -7,11 +7,12 @@
 namespace Rioxygen\CiCoreDatabase;
 
 use Rioxygen\CiCoreDatabase\Mysql\CI_DB_mysqli_driver;
+use PHPUnit\Framework\TestCase;
 
 /**
  * 
  */
-class CI_DB_driverTest extends \PHPUnit_Framework_TestCase
+class CI_DB_driverTest extends TestCase
 {
     /**
      * 
@@ -20,6 +21,8 @@ class CI_DB_driverTest extends \PHPUnit_Framework_TestCase
     {
         $cofig = \Bootstrap::getConfig();
         $baseDatos = new CI_DB_mysqli_driver($cofig);
+        $baseDatos->reconnect();
+        $baseDatos->version();
         $this->assertTrue(true);
     }
 }
