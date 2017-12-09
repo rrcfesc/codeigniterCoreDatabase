@@ -3,6 +3,11 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rrcfesc/codeigniterCoreDatabase/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rrcfesc/codeigniterCoreDatabase/?branch=master)
 [![Dependency Status](https://www.versioneye.com/user/projects/5a2b16b70fb24f466ccb947e/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/5a2b16b70fb24f466ccb947e)
 
+Core Mysql Driver CodeIgniter
+========================
+Based on the [CodeIgniter](https://github.com/bcit-ci/CodeIgniter) database implementation
+This takes the Mysql Library from 3.0 and makes it work without the rest of CodeIgniter.
+
 # Proyecto codeigniterCoreDatabase
 Este proyecto busca pasar el driver de CodeIgniter v3.* a un estandar PSR-4 para ser usado
 como una libreria más o como capa de acceso a datos
