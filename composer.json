@@ -1,5 +1,5 @@
 {
-  "name" : "Rioxygen/CiCoreDatabase",
+  "name" : "rioxygen/cicoredatabase",
   "description": "CodeIgniter Core Database Mysql" ,
   "license": "BSD 3-Clause License",
   "keywords": ["CodeIgniter", "MYSQL","Database"],
