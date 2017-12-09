@@ -22,7 +22,6 @@ class CI_DB_driverTest extends TestCase
         $cofig = \Bootstrap::getConfig();
         $baseDatos = new CI_DB_mysqli_driver($cofig);
         $baseDatos->reconnect();
-        $baseDatos->version();
         $this->assertTrue(true);
     }
 }
