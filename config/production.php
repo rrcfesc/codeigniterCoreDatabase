@@ -3,7 +3,7 @@ return array(
     'dsn'	=> '',
     'hostname' => '127.0.0.1',
     'username' => 'travis',
-    'password' => 'mysql',
+    'password' => '',
     'database' => 'magento',
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
