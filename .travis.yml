@@ -16,9 +16,9 @@ after_script:
   - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
 
 after_success:
-  - travis_retry php vendor/bin/coveralls
+  - travis_retry php vendor/php-coveralls/php-coveralls/bin/coveralls
   # or enable logging
-  - travis_retry php vendor/bin/coveralls -v
+  - travis_retry php vendor/php-coveralls/php-coveralls/bin/coveralls -v
 notifications:
   email:
     - ricardojesus.ruizcruz@gmail.com
