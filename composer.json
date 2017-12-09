@@ -20,11 +20,6 @@
     "squizlabs/php_codesniffer": "1.5.5",
     "symfony/http-kernel":"3.4.1"
   },
-  "extra": {
-        "branch-alias": {
-            "dev-master": "master"
-        }
-  },
   "autoload": {
     "psr-4": {
       "Rioxygen\\CiCoreDatabase\\": "src"
