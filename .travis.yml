@@ -12,14 +12,13 @@ script:
   - php vendor/bin/phpunit
 
 after_script:
-  - wget https://github.com/php-coveralls/php-coveralls/releases/download/v2.0.0/php-coveralls.phar
-  - chmod +x php-coveralls.phar
   - wget https://scrutinizer-ci.com/ocular.phar  
   - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
 
 after_success:
+  - wget https://github.com/php-coveralls/php-coveralls/releases/download/v2.0.0/php-coveralls.phar
+  - chmod +x php-coveralls.phar
   - travis_retry php php-coveralls.phar
-  # or enable logging
   - travis_retry php php-coveralls.phar -v
 notifications:
   email:
