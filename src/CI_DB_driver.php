@@ -431,7 +431,7 @@ abstract class CI_DB_driver {
 			// We still don't have a connection?
 			if ( ! $this->conn_id)
 			{
-				log_message('error', 'Unable to connect to the database');
+                            error_log('error', 'Unable to connect to the database');
 
 				if ($this->db_debug)
 				{
@@ -528,7 +528,7 @@ abstract class CI_DB_driver {
 	{
 		if (method_exists($this, '_db_set_charset') && ! $this->_db_set_charset($charset))
 		{
-			log_message('error', 'Unable to set database connection charset: '.$charset);
+                    error_log('error', 'Unable to set database connection charset: '.$charset);
 
 			if ($this->db_debug)
 			{
@@ -611,7 +611,7 @@ abstract class CI_DB_driver {
 	{
 		if ($sql === '')
 		{
-			log_message('error', 'Invalid query: '.$sql);
+                    error_log('error', 'Invalid query: '.$sql);
 			return ($this->db_debug) ? $this->display_error('db_invalid_query') : FALSE;
 		}
 		elseif ( ! is_bool($return_object))
@@ -670,7 +670,7 @@ abstract class CI_DB_driver {
 			$error = $this->error();
 
 			// Log errors
-			log_message('error', 'Query error: '.$error['message'].' - Invalid query: '.$sql);
+			error_log('error', 'Query error: '.$error['message'].' - Invalid query: '.$sql);
 
 			if ($this->db_debug)
 			{
@@ -684,7 +684,7 @@ abstract class CI_DB_driver {
 					$this->trans_complete();
 					if ($trans_depth === $this->_trans_depth)
 					{
-						log_message('error', 'Database: Failure during an automated transaction commit/rollback!');
+                                            error_log('error', 'Database: Failure during an automated transaction commit/rollback!');
 						break;
 					}
 				}
