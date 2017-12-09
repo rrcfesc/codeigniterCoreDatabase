@@ -15,7 +15,6 @@ web:
     links:
         - mysql
     container_name: cicore-web
-    restart: always
 mysql:
     image: mysql:5.7
     ports:
@@ -24,4 +23,3 @@ mysql:
         - MYSQL_ROOT_PASSWORD=mysql
         - MYSQL_DATABASE=magento2
     container_name: cicore-db
-    restart: always
