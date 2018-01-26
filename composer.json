@@ -1,7 +1,7 @@
 {
   "name" : "rioxygen/cicoredatabase",
   "description": "CodeIgniter Core Database Mysql" ,
-  "license": "BSD 3-Clause License",
+  "license": "BSD-3-Clause",
   "keywords": ["CodeIgniter", "MYSQL","Database"],
   "minimum-stability": "stable",
   "authors": [
