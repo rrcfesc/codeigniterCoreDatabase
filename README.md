@@ -14,6 +14,7 @@ como una libreria más o como capa de acceso a datos
 
 ## Ejemplo de carga
 
+
 ```php
 <?php
 use Rioxygen\CiCoreDatabase\Mysql\CI_DB_mysqli_driver;
